@@ -1,15 +1,25 @@
-import { Text, View } from "react-native";
+import { View,Text, StyleSheet } from "react-native";
+import {StatusBar} from 'expo-status-bar'
+import {calColors} from '../src/colors/colors.jsx'
+
+
+
 
 export default function Index() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
-    </View>
+      <View style={styles.container}>
+        <Text>Theme</Text>
+        <StatusBar style="auto" />
+      </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: calColors.light,
+    alignItems: 'center',
+    Color: calColors.white,
+    justifyContent: 'center',
+  },
+});
