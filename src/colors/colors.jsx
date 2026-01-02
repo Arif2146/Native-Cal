@@ -1,11 +1,9 @@
-export const calColors ={
-light: '#FEFAEF',
-dark: '#242834',
-sidebtn: '#8EFF01',
-btnGray: '#4E505F',
-btnDark: '#2E2F38',
-gray: '#747477',
-black: '#0C0E0B',
-white: '#FFFFFF',
-result: '#46D5B2',
-}
+export const calColors = {
+light: '#FBFBFB',
+dark: '#0c263b',
+btnLight:'#F6F5F2',
+btnDark:'#09122C',
+btnRight: '#7743DB',
+black: '#171617',
+white: '#fefeff',
+gray:'#f2f2f4'}
