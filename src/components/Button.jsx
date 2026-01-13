@@ -1,7 +1,8 @@
 import { StyleSheet, Text, TouchableOpacity} from "react-native";
 import { calColors } from "../colors/colors";
 
-export default function BButton({title,type}) {
+export default function BButton({title,type,onPress}) {
+
     return(
         <TouchableOpacity style = {[
 styles.button,
@@ -13,7 +14,7 @@ type === "top"
 ? calColors.btnRight
 : calColors.btnLight,
 },
-]} onPress={()=>{}}>
+]} onPress={onPress}>
             <Text style={{fontSize:34,color: type === "number" ? calColors.black : calColors.btnLight,}}>{title}</Text>
         </TouchableOpacity>
     )
