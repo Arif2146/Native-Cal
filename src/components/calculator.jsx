@@ -1,37 +1,47 @@
 import { StyleSheet, Text,  View } from "react-native";
 import { calColors } from "../colors/colors";
 import BButton from "./Button.jsx";
+import React, { useState } from "react";
 
 
 
 export default function Calculator() {
+      const [firstValue, setFirstValue] = useState("");
+      const [displayValue, setDisplayValue] = useState("0");
+      const [operator, setOperator] = useState("");
 
-
+const handleNumberInput = (num) => {
+  if (displayValue === "0") {
+    setDisplayValue(num);
+  } else {
+    setDisplayValue(displayValue + num);
+  }
+}
     return (
         <View style={styles.container}>
             <View style={styles.display}>
-              <Text style={{fontSize:70,fontWeight:'semibold'}}>8765</Text>
+              <Text style={{fontSize:70,fontWeight:'semibold'}}>{displayValue}</Text>
             </View>
             <View style={styles.Keypad}>
                <BButton title='C' type='top'/>
               <BButton title='«' type='top'/>
 <BButton title='%' type='top'/>
 <BButton title='+' type='right'/>
-<BButton title='7' type='number'/>
-<BButton title='8' type='number'/>
-<BButton title='9' type='number'/>
+<BButton title='7' type='number' onPress={() => handleNumberInput(7)}/>
+<BButton title='8' type='number' onPress={() => handleNumberInput(8)}/>
+<BButton title='9' type='number' onPress={() => handleNumberInput(9)}/>
 <BButton title='x' type='right'/>
-<BButton title='6' type='number'/>
-<BButton title='5' type='number'/>
-<BButton title='4' type='number'/>
+<BButton title='6' type='number' onPress={() => handleNumberInput('6')}/>
+<BButton title='5' type='number' onPress={() => handleNumberInput('5')}/>
+<BButton title='4' type='number' onPress={() => handleNumberInput('4')}/>
 <BButton title='-' type='right'/>
-<BButton title='1' type='number'/>
-<BButton title='2' type='number'/>
-<BButton title='3' type='number'/>
+<BButton title='1' type='number' onPress={() => handleNumberInput('1')}/>
+<BButton title='2' type='number' onPress={() => handleNumberInput('2')}/>
+<BButton title='3' type='number' onPress={() => handleNumberInput('3')}/>
 <BButton title='+' type='right'/>
-<BButton title='0' type='number'/>
-<BButton title='00' type='number'/>
-<BButton title='.' type='number'/>
+<BButton title='0' type='number' onPress={() => handleNumberInput('0')}/> 
+<BButton title='00' type='number' onPress={() => handleNumberInput('00')}/>
+<BButton title='.' type='number' onPress={() => handleNumberInput('.')}/>
 <BButton title='=' type='right'/>
             </View>
         </View>
